@@ -26,100 +26,20 @@
             --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.15);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            min-height: 100vh;
-            padding: 24px;
-            color: var(--text-primary);
-            line-height: 1.5;
-        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); min-height: 100vh; padding: 24px; color: var(--text-primary); line-height: 1.5; }
         .container { max-width: 1440px; margin: 0 auto; }
-        .header {
-            background: #000000;
-            border-radius: 20px;
-            margin-bottom: 28px;
-            border: 1px solid var(--border-color);
-            padding: 24px 32px;
-            box-shadow: var(--shadow-lg);
-        }
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            height: 52px;
-            max-width: 130px;
-            object-fit: contain;
-            filter: brightness(1.1);
-            transition: transform 0.3s ease;
-        }
+        .header { background: #000000; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border-color); padding: 24px 32px; box-shadow: var(--shadow-lg); }
+        .header-content { display: flex; align-items: center; justify-content: space-between; }
+        .logo { height: 52px; max-width: 130px; object-fit: contain; filter: brightness(1.1); transition: transform 0.3s ease; }
         .logo:hover { transform: scale(1.05); }
-        .header-center {
-            text-align: center;
-            flex: 1;
-            padding: 0 24px;
-        }
-        .header h1 {
-            font-size: 1.9rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #f472b6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-        }
-        .header .subtitle {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            font-weight: 400;
-        }
-        .header .update {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.05) 100%);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            color: #4ade80;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 12px;
-            padding: 8px 16px;
-            border-radius: 30px;
-        }
-        .kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 18px;
-            margin-bottom: 28px;
-        }
-        .kpi-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 24px 20px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .kpi-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            border-radius: 16px 16px 0 0;
-        }
-        .kpi-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg), var(--shadow-glow);
-            border-color: rgba(255,255,255,0.15);
-        }
+        .header-center { text-align: center; flex: 1; padding: 0 24px; }
+        .header h1 { font-size: 1.9rem; font-weight: 700; background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; letter-spacing: -0.5px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 0.95rem; font-weight: 400; }
+        .header .update { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.05) 100%); border: 1px solid rgba(34, 197, 94, 0.3); color: #4ade80; font-size: 0.85rem; font-weight: 600; margin-top: 12px; padding: 8px 16px; border-radius: 30px; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; margin-bottom: 28px; }
+        .kpi-card { background: var(--bg-card); backdrop-filter: blur(10px); border-radius: 16px; padding: 24px 20px; text-align: center; border: 1px solid var(--border-color); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 16px 16px 0 0; }
+        .kpi-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg), var(--shadow-glow); border-color: rgba(255,255,255,0.15); }
         .kpi-card.total::before { background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan)); }
         .kpi-card.critical::before { background: linear-gradient(90deg, #dc2626, var(--accent-red)); }
         .kpi-card.alert::before { background: linear-gradient(90deg, #d97706, var(--accent-orange)); }
@@ -127,14 +47,7 @@
         .kpi-card.ok::before { background: linear-gradient(90deg, #16a34a, var(--accent-green)); }
         .kpi-card.valor::before { background: linear-gradient(90deg, #2563eb, #7c3aed); }
         .kpi-card .icon { font-size: 1.8rem; margin-bottom: 8px; opacity: 0.9; }
-        .kpi-card .label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
+        .kpi-card .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 12px; }
         .kpi-card .value { font-size: 2.8rem; font-weight: 800; line-height: 1; margin-bottom: 8px; }
         .kpi-card .percent { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
         .kpi-card.total .value { color: var(--accent-blue); }
@@ -143,106 +56,29 @@
         .kpi-card.attention .value { color: var(--accent-yellow); }
         .kpi-card.ok .value { color: var(--accent-green); }
         .kpi-card.valor .value { color: #818cf8; font-size: 1.2rem; }
-        .sla-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-        .sla-section {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        .sla-section:hover {
-            border-color: rgba(255,255,255,0.12);
-            box-shadow: var(--shadow-lg);
-        }
-        .sla-header {
-            padding: 18px 24px;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .sla-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px; }
+        .sla-section { background: var(--bg-card); backdrop-filter: blur(10px); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .sla-section:hover { border-color: rgba(255,255,255,0.12); box-shadow: var(--shadow-lg); }
+        .sla-header { padding: 18px 24px; font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; display: flex; align-items: center; gap: 10px; }
         .sla-header.critical { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
         .sla-header.alert { background: linear-gradient(135deg, #d97706 0%, #92400e 100%); }
         .sla-header.attention { background: linear-gradient(135deg, #ca8a04 0%, #854d0e 100%); }
         .sla-header.ok { background: linear-gradient(135deg, #16a34a 0%, #166534 100%); }
         .sla-table { width: 100%; border-collapse: collapse; }
-        .sla-table th {
-            background: rgba(0,0,0,0.4);
-            padding: 14px 20px;
-            text-align: left;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .sla-table td {
-            padding: 14px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-        }
+        .sla-table th { background: rgba(0,0,0,0.4); padding: 14px 20px; text-align: left; font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .sla-table td { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.9rem; }
         .sla-table tr { transition: background 0.2s ease; }
         .sla-table tbody tr:hover { background: rgba(255,255,255,0.04); }
         .sla-table .qty { font-weight: 800; font-size: 1.2rem; min-width: 50px; }
-        .sla-table .resp {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #93c5fd;
-        }
+        .sla-table .resp { display: inline-flex; align-items: center; background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%); border: 1px solid rgba(59, 130, 246, 0.3); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #93c5fd; }
         .sla-table .action { color: var(--text-secondary); }
-        .sla-total {
-            background: rgba(0,0,0,0.3);
-            padding: 16px 20px;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1rem;
-        }
+        .sla-total { background: rgba(0,0,0,0.3); padding: 16px 20px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; }
         .sla-total .total-value { font-size: 1.4rem; font-weight: 800; }
-        .footer {
-            text-align: center;
-            padding: 28px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 24px;
-            border-top: 1px solid var(--border-color);
-        }
+        .footer { text-align: center; padding: 28px; color: var(--text-muted); font-size: 0.85rem; margin-top: 24px; border-top: 1px solid var(--border-color); }
         .footer a { color: var(--accent-blue); text-decoration: none; }
-        @media (max-width: 1200px) {
-            .kpi-grid { grid-template-columns: repeat(3, 1fr); }
-            .sla-grid { grid-template-columns: 1fr; }
-            .header-content { flex-direction: column; gap: 20px; }
-            .logo { height: 45px; }
-        }
-        @media (max-width: 768px) {
-            body { padding: 16px; }
-            .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .kpi-card { padding: 18px 16px; }
-            .kpi-card .value { font-size: 2.2rem; }
-            .header h1 { font-size: 1.4rem; }
-            .logo { height: 38px; }
-            .sla-table th, .sla-table td { padding: 12px 14px; }
-        }
-        @media (max-width: 480px) {
-            .kpi-grid { grid-template-columns: 1fr; }
-            .kpi-card.valor .value { font-size: 1.2rem; }
-        }
+        @media (max-width: 1200px) { .kpi-grid { grid-template-columns: repeat(3, 1fr); } .sla-grid { grid-template-columns: 1fr; } .header-content { flex-direction: column; gap: 20px; } .logo { height: 45px; } }
+        @media (max-width: 768px) { body { padding: 16px; } .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } .kpi-card { padding: 18px 16px; } .kpi-card .value { font-size: 2.2rem; } .header h1 { font-size: 1.4rem; } .logo { height: 38px; } .sla-table th, .sla-table td { padding: 12px 14px; } }
+        @media (max-width: 480px) { .kpi-grid { grid-template-columns: 1fr; } .kpi-card.valor .value { font-size: 1.2rem; } }
     </style>
 </head>
 <body>
@@ -252,11 +88,11 @@
             <div class="header-content">
                 <img src="Ability.png" alt="Ability" class="logo">
                 <div class="header-center">
-                    <h1>DASHBOARD DE GESTÃO - SLA OS's FATB SUL</h1>
+                    <h1>DASHBOARD DE GESTÃO - SLA OS&#39;s FATB SUL</h1>
                     <p class="subtitle">Monitoramento e Análise de Performance Operacional</p>
                     <div class="update">
                         <span>✅</span>
-                        <span>Atualizado: 24/06/2026 14:10 | BASE: OS Única PRISMA (236 OSs)</span>
+                        <span>Atualizado: 24/06/2026 17:43 | BASE: OS Única PRISMA (231 OS's)</span>
                     </div>
                 </div>
                 <div style="display: flex; gap: 20px; align-items: center;">
@@ -268,142 +104,84 @@
 
         <!-- KPI CARDS -->
         <section class="kpi-grid">
-            <div class="kpi-card total">
-                <div class="icon">📊</div>
-                <div class="label">Total de OS's</div>
-                <div class="value">236</div>
-                <div class="percent">ordens de serviço</div>
-            </div>
-            <div class="kpi-card critical">
-                <div class="icon">🔴</div>
-                <div class="label">90+ Dias</div>
-                <div class="value">23</div>
-                <div class="percent">10%</div>
-            </div>
-            <div class="kpi-card alert">
-                <div class="icon">🟠</div>
-                <div class="label">60-90 Dias</div>
-                <div class="value">24</div>
-                <div class="percent">10%</div>
-            </div>
-            <div class="kpi-card attention">
-                <div class="icon">🟡</div>
-                <div class="label">30-60 Dias</div>
-                <div class="value">52</div>
-                <div class="percent">22%</div>
-            </div>
-            <div class="kpi-card ok">
-                <div class="icon">🟢</div>
-                <div class="label">-30 Dias</div>
-                <div class="value">137</div>
-                <div class="percent">58%</div>
-            </div>
-            <div class="kpi-card valor">
-                <div class="icon">💰</div>
-                <div class="label">Valor Total OS's</div>
-                <div class="value">R$ 1.869.829,20</div>
-                <div class="percent"></div>
-            </div>
+            <div class="kpi-card total"><div class="icon">📊</div><div class="label">Total de OS's</div><div class="value">231</div><div class="percent">ordens de serviço</div></div>
+            <div class="kpi-card critical"><div class="icon">🔴</div><div class="label">90+ Dias</div><div class="value">22</div><div class="percent">10%</div></div>
+            <div class="kpi-card alert"><div class="icon">🟠</div><div class="label">60-90 Dias</div><div class="value">24</div><div class="percent">10%</div></div>
+            <div class="kpi-card attention"><div class="icon">🟡</div><div class="label">30-60 Dias</div><div class="value">58</div><div class="percent">25%</div></div>
+            <div class="kpi-card ok"><div class="icon">🟢</div><div class="label">-30 Dias</div><div class="value">127</div><div class="percent">55%</div></div>
+            <div class="kpi-card valor"><div class="icon">💰</div><div class="label">Valor Total OS's</div><div class="value">R$ 1.796.404,76</div><div class="percent"></div></div>
         </section>
 
         <!-- SLA TABLES ROW 1 -->
         <div class="sla-grid">
-            <!-- SLA 90+ CRÍTICO -->
             <section class="sla-section">
                 <div class="sla-header critical">❌ SLA 90+ (CRÍTICO)</div>
-                <table class="sla-table">
-                    <thead>
-                        <tr><th>QTD</th><th>RESPONSÁVEL</th><th>AÇÃO INTERNA</th></tr>
-                    </thead>
-                    <tbody>
-"                        <tr><td class=""qty"">9</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ATIVIDADE AGENDADA</td></tr>
-                        <tr><td class=""qty"">5</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">PRAZO CHEGADA MATERIAL</td></tr>
-                        <tr><td class=""qty"">4</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">AGENDAR ATIVIDADE</td></tr>
-                        <tr><td class=""qty"">4</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">SERVIÇO RECUSADO</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ABRIR RM</td></tr>"
-                    </tbody>
-                </table>
-                <div class="sla-total"><span>TOTAL</span><span class="total-value">23</span></div>
+                <table class="sla-table"><thead><tr><th>QTD</th><th>RESPONSÁVEL</th><th>AÇÃO INTERNA</th></tr></thead><tbody>
+                        <tr><td class="qty">8</td><td><span class="resp">FATURA B</span></td><td class="action">ATIVIDADE AGENDADA</td></tr>
+                        <tr><td class="qty">5</td><td><span class="resp">COMPRAS</span></td><td class="action">PRAZO CHEGADA MATERIAL</td></tr>
+                        <tr><td class="qty">4</td><td><span class="resp">FATURA B</span></td><td class="action">AGENDAR ATIVIDADE</td></tr>
+                        <tr><td class="qty">4</td><td><span class="resp">FATURA B</span></td><td class="action">SERVIÇO RECUSADO</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">FATURA B</span></td><td class="action">ABRIR RM</td></tr>
+                </tbody></table>
+                <div class="sla-total"><span>TOTAL</span><span class="total-value">22</span></div>
             </section>
-
-            <!-- SLA 60-90 ALERTA -->
             <section class="sla-section">
                 <div class="sla-header alert">⚠️ SLA 60-90 (ALERTA)</div>
-                <table class="sla-table">
-                    <thead>
-                        <tr><th>QTD</th><th>RESPONSÁVEL</th><th>AÇÃO INTERNA</th></tr>
-                    </thead>
-                    <tbody>
-"                        <tr><td class=""qty"">11</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ATIVIDADE AGENDADA</td></tr>
-                        <tr><td class=""qty"">3</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">AGENDAR ATIVIDADE</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ANALISE</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">ORÇAMENTO</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">PRAZO CHEGADA MATERIAL</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">ENTREGA MATERIAL</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">SERVIÇO RECUSADO</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">VISTORIA REPROVADA</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">AGUARDANDO OC</td></tr>"
-                    </tbody>
-                </table>
+                <table class="sla-table"><thead><tr><th>QTD</th><th>RESPONSÁVEL</th><th>AÇÃO INTERNA</th></tr></thead><tbody>
+                        <tr><td class="qty">11</td><td><span class="resp">FATURA B</span></td><td class="action">ATIVIDADE AGENDADA</td></tr>
+                        <tr><td class="qty">4</td><td><span class="resp">FATURA B</span></td><td class="action">AGENDAR ATIVIDADE</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">FATURA B</span></td><td class="action">ANALISE</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">COMPRAS</span></td><td class="action">PRAZO CHEGADA MATERIAL</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">COMPRAS</span></td><td class="action">ORÇAMENTO</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">COMPRAS</span></td><td class="action">ENTREGA MATERIAL</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">FATURA B</span></td><td class="action">SERVIÇO RECUSADO</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">FATURA B</span></td><td class="action">VISTORIA REPROVADA</td></tr>
+                </tbody></table>
                 <div class="sla-total"><span>TOTAL</span><span class="total-value">24</span></div>
             </section>
         </div>
 
         <!-- SLA TABLES ROW 2 -->
         <div class="sla-grid">
-            <!-- SLA 30-60 ATENÇÃO -->
             <section class="sla-section">
                 <div class="sla-header attention">📊 SLA 30-60 (ATENÇÃO)</div>
-                <table class="sla-table">
-                    <thead>
-                        <tr><th>QTD</th><th>RESPONSÁVEL</th><th>AÇÃO INTERNA</th></tr>
-                    </thead>
-                    <tbody>
-"                        <tr><td class=""qty"">25</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">AGENDAR ATIVIDADE</td></tr>
-                        <tr><td class=""qty"">7</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ANALISE</td></tr>
-                        <tr><td class=""qty"">4</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ATIVIDADE AGENDADA</td></tr>
-                        <tr><td class=""qty"">4</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">ORÇAMENTO</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">PRAZO CHEGADA MATERIAL</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">VISTORIA REPROVADA</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">APROVAÇÃO CP</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ALTERAR PRISMA PARA EXECUTADO</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">AGUARDANDO OC</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">COTAÇÃO</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">OPERAÇÃO</span></td><td class=""action"">ATIVIDADE AGENDADA</td></tr>"
-                    </tbody>
-                </table>
-                <div class="sla-total"><span>TOTAL</span><span class="total-value">52</span></div>
+                <table class="sla-table"><thead><tr><th>QTD</th><th>RESPONSÁVEL</th><th>AÇÃO INTERNA</th></tr></thead><tbody>
+                        <tr><td class="qty">30</td><td><span class="resp">FATURA B</span></td><td class="action">AGENDAR ATIVIDADE</td></tr>
+                        <tr><td class="qty">7</td><td><span class="resp">FATURA B</span></td><td class="action">ANALISE</td></tr>
+                        <tr><td class="qty">5</td><td><span class="resp">FATURA B</span></td><td class="action">ATIVIDADE AGENDADA</td></tr>
+                        <tr><td class="qty">5</td><td><span class="resp">COMPRAS</span></td><td class="action">ORÇAMENTO</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">COMPRAS</span></td><td class="action">APROVAÇÃO CP</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">COMPRAS</span></td><td class="action">PRAZO CHEGADA MATERIAL</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">FATURA B</span></td><td class="action">VISTORIA REPROVADA</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">FATURA B</span></td><td class="action">ALTERAR PRISMA PARA EXECUTADO</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">COMPRAS</span></td><td class="action">COTAÇÃO</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">COMPRAS</span></td><td class="action">AGUARDANDO OC</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">OPERAÇÃO</span></td><td class="action">ATIVIDADE AGENDADA</td></tr>
+                </tbody></table>
+                <div class="sla-total"><span>TOTAL</span><span class="total-value">58</span></div>
             </section>
-
-            <!-- SLA -30 OK -->
             <section class="sla-section">
                 <div class="sla-header ok">✅ SLA -30 (OK)</div>
-                <table class="sla-table">
-                    <thead>
-                        <tr><th>QTD</th><th>RESPONSÁVEL</th><th>AÇÃO INTERNA</th></tr>
-                    </thead>
-                    <tbody>
-"                        <tr><td class=""qty"">23</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">AGENDAR ATIVIDADE</td></tr>
-                        <tr><td class=""qty"">15</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ANALISE</td></tr>
-                        <tr><td class=""qty"">15</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">ORÇAMENTO</td></tr>
-                        <tr><td class=""qty"">15</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ABRIR RM</td></tr>
-                        <tr><td class=""qty"">14</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">AGUARDANDO OC</td></tr>
-                        <tr><td class=""qty"">13</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">PRAZO CHEGADA MATERIAL</td></tr>
-                        <tr><td class=""qty"">10</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">COTAÇÃO</td></tr>
-                        <tr><td class=""qty"">6</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ATIVIDADE AGENDADA</td></tr>
-                        <tr><td class=""qty"">5</td><td><span class=""resp"">FINANCEIRO</span></td><td class=""action"">APROVAR FINANCEIRO</td></tr>
-                        <tr><td class=""qty"">4</td><td><span class=""resp"">OPERAÇÃO</span></td><td class=""action"">APROVAR N1</td></tr>
-                        <tr><td class=""qty"">4</td><td><span class=""resp"">OPERAÇÃO</span></td><td class=""action"">ATIVIDADE AGENDADA</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">OPERAÇÃO</span></td><td class=""action"">AGENDAR ATIVIDADE</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">SERVIÇO RECUSADO</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">COMPRAS</span></td><td class=""action"">APROVAÇÃO CP</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">VIRAR APROVAÇÃO N2</td></tr>
-                        <tr><td class=""qty"">2</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">ALTERAR PRISMA PARA EXECUTADO</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">OPERAÇÃO</span></td><td class=""action"">APROVAR N2</td></tr>
-                        <tr><td class=""qty"">1</td><td><span class=""resp"">FATURA B</span></td><td class=""action"">VERIFICAR STATUS RM</td></tr>"
-                    </tbody>
-                </table>
-                <div class="sla-total"><span>TOTAL</span><span class="total-value">137</span></div>
+                <table class="sla-table"><thead><tr><th>QTD</th><th>RESPONSÁVEL</th><th>AÇÃO INTERNA</th></tr></thead><tbody>
+                        <tr><td class="qty">26</td><td><span class="resp">FATURA B</span></td><td class="action">AGENDAR ATIVIDADE</td></tr>
+                        <tr><td class="qty">24</td><td><span class="resp">COMPRAS</span></td><td class="action">PRAZO CHEGADA MATERIAL</td></tr>
+                        <tr><td class="qty">14</td><td><span class="resp">FATURA B</span></td><td class="action">ABRIR RM</td></tr>
+                        <tr><td class="qty">11</td><td><span class="resp">COMPRAS</span></td><td class="action">COTAÇÃO</td></tr>
+                        <tr><td class="qty">9</td><td><span class="resp">COMPRAS</span></td><td class="action">ORÇAMENTO</td></tr>
+                        <tr><td class="qty">9</td><td><span class="resp">OPERAÇÃO</span></td><td class="action">APROVAR N1</td></tr>
+                        <tr><td class="qty">7</td><td><span class="resp">FATURA B</span></td><td class="action">ANALISE</td></tr>
+                        <tr><td class="qty">6</td><td><span class="resp">COMPRAS</span></td><td class="action">APROVAÇÃO CP</td></tr>
+                        <tr><td class="qty">5</td><td><span class="resp">FATURA B</span></td><td class="action">ATIVIDADE AGENDADA</td></tr>
+                        <tr><td class="qty">4</td><td><span class="resp">OPERAÇÃO</span></td><td class="action">ATIVIDADE AGENDADA</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">OPERAÇÃO</span></td><td class="action">AGENDAR ATIVIDADE</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">OPERAÇÃO</span></td><td class="action">APROVAR N2</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">FATURA B</span></td><td class="action">SERVIÇO RECUSADO</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">FATURA B</span></td><td class="action">VIRAR APROVAÇÃO N2</td></tr>
+                        <tr><td class="qty">2</td><td><span class="resp">FATURA B</span></td><td class="action">ALTERAR PRISMA PARA EXECUTADO</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">COMPRAS</span></td><td class="action">AGUARDANDO OC</td></tr>
+                        <tr><td class="qty">1</td><td><span class="resp">FATURA B</span></td><td class="action">VERIFICAR STATUS RM</td></tr>
+                </tbody></table>
+                <div class="sla-total"><span>TOTAL</span><span class="total-value">127</span></div>
             </section>
         </div>
 
